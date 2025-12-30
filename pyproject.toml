@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "inbody-ml-bot"
+version = "0.1.0"
+description = "Base project for predicting InBody metrics and serving via Telegram bot"
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+packages = [
+  { include = "src" },
+  { include = "scripts" }
+]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pandas = "2.2.2"
+scikit-learn = "1.5.1"
+joblib = "1.4.2"
+python-telegram-bot = "21.4"
+python-dotenv = "1.0.1"
+
+[tool.poetry.scripts]
+train-model = "scripts.train_model:main"
+bot = "src.bot.bot:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
